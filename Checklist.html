@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Checklist</title>
+    <link rel="stylesheet" href="Checklist.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <script src="lib/jquery-3.5.1.js"></script>
+    <script src="Checklist.js"></script>
+    <script src="appStorage.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>Checklist</header>
+        <div id="main"></div>
+        <div id='add-task'>
+            <label for="new-task-name">Add a task</label>
+            <input type="text" id="new-task-name" title="Enter a task name" placeholder="Enter a task name">
+        </div>
+        <ul id="task-list">
+        </ul>
+        <footer></footer>
+    </div>
+
+    <!--HTML template that allows us to remove all of the code 
+        to dynamically generate task elements and replace it 
+        with a call to jQuery's clone() method. This makes it 
+        easier for us to update and maintain element structures
+         in HTML rather than JavaScript.-->
+    <div id="templates" class="hidden">
+        <ul id="task-template">
+            <li class="task">
+                <div class="tools">
+                    <button class="delete" title="Delete">X</button>
+                    <button class="move-up" title="Up">^</button>
+                    <button class="move-down" title="Down">v</button>
+                </div>
+                <span class="task-name"></span>
+                <input type="text" class="task-name hidden"/>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
